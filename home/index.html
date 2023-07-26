@@ -3,49 +3,367 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spotify-Clone</title>
+    <title>Spotify Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./photos/favicon.png" type="image/x-icon">
 </head>
 
 <body>
-    <sidebar class="sidebar">
-        <!-- Sidebar Section -->
-        <nav>
-            <div class="nav-el-upper">
-                <div class="nav-el">
-                    <i class="fa-solid fa-ellipsis fa-xl"></i>
+    <!-- Body of page wrap in parent class -->
+    <section class="parent">
+        <sidebar class="sidebar">
+            <!-- Sidebar Section -->
+            <nav>
+                <div class="nav-el-upper">
+                    <div class="nav-el">
+                        <i class="fa-solid fa-ellipsis fa-xl"></i>
+                    </div>
+
+                    <div class="nav-el">
+                        <img src="./Sidebar-Image/home.png" alt="home-icon" class="nav-icons">
+                        <h1>Home</h1>
+                    </div>
+
+                    <div class="nav-el">
+                        <img src="./Sidebar-Image/search.png" alt="search-icon" class="nav-icons" id="sidebar-search">
+                        <h1>Search</h1>
+                    </div>
+
+                    <div class="nav-el">
+                        <img src="./Sidebar-Image/library.png" alt="library-icon" class="nav-icons">
+                        <h1>Your Library</h1>
+                    </div>
+
                 </div>
 
-                <div class="nav-el">
-                    <img src="./Sidebar-Image/home.png" alt="home-icon" class="nav-icons">
-                    <h1>Home</h1>
+                <div class="nav-el-lower">
+                    <div class="nav-el">
+                        <img src="./Sidebar-Image/create-playlist.png" alt="create-playlist-icon" class="nav-icons">
+                        <h1>Create Playlist</h1>
+                    </div>
+                    <div class="nav-el">
+                        <img src="./Sidebar-Image/liked-songs.png" alt="liked-songs-icon" class="nav-icons">
+                        <h1>Liked Songs</h1>
+                    </div>
+                    <div class="sidebar-line"></div>
+                </div>
+            </nav>
+        </sidebar>
+
+        <!-- Main Section -->
+        <main class="main">
+            <!-- Header section -->
+            <section class="header-section">
+                <div class="back-forward-btn">
+                    <i class="fa-solid fa-circle-chevron-left back-btn fa-2x"></i>
+                    <i class="fa-solid fa-circle-chevron-right forward-btn fa-2x"></i>
+                </div>
+                <div class="header-search-div">
+                    <i class="fa-solid fa-magnifying-glass fa-2x header-search-icon"></i>
+                    <input type="text" placeholder="what do you want to listen ?">
+                </div>
+                <div class="upgrade">
+                    <button class="upgrade-btn">Explore Premium</button>
+                </div>
+                <div class="dropdown">
+                    <img src="./photos/dropdown-profile-img.png" alt="dropdown-profile-img">
+                    <p class="profile-name">Deepak</p>
+                    <i class="fa-solid fa-caret-down"></i>
+                </div>
+                <ul class="dropdown-inner">
+                    <li>Account</li>
+                    <li>Profile</li>
+                    <li>Private Session</li>
+                    <li>Settings</li>
+                    <div class="logout-line"></div>
+                    <li id="log-out">Log Out</li>
+                </ul>
+                <div class="user-name">Deepak</div>
+            </section>
+            <!--Main Home Section -->
+            <section class="home-page">
+                <div class="playlist-sponsored">
+                    <p>PLAYLIST</p>
+                    <span>SPONSERED</span>
+                </div>
+                <div class="trending-home">
+                    <a href="#"><img src="./photos/home-playlist-song.jpg" alt="home-playlist-song"></a>
+                    <div class="trending-song">
+                        <h1>Trending Insta Reels 2023 Hindi</h1>
+                        <p>Listen to the biggest trending song on Instagram... Only on the Trending Insta Reels
+                            Playlist! Follow Now! </p>
+                        <div class="home-buttons">
+                            <button id="play-btn-home">Play</button>
+                            <button id="follow-btn">Follow</button>
+                            <i class="fa-solid fa-ellipsis fa-xl home-more-btn"></i>
+                            <div class="more-playlist">More</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--Home Page Song Collection-->
+            <section class="user-likes">
+                <div class="user-likes-title">
+                    <h1>More of what you like</h1>
+                    <p>SHOW ALL</p>
                 </div>
 
-                <div class="nav-el">
-                    <img src="./Sidebar-Image/search.png" alt="search-icon" class="nav-icons" id="sidebar-search">
-                    <h1>Search</h1>
+                <div class="cards">
+
+                    <div class="song-cards">
+                        <div class="song-cover">
+                            <img alt="song-card">
+                            <h4 class="song-title">Top Hindi Tracks of all time</h4>
+                            <p>Catch the best of all time</p>
+                            <i id="0" class=" fa-solid fa-circle-play fa-3x cover-play-btn"></i>
+                        </div>
+                    </div>
+
+                    <div class="song-cards">
+                        <div class="song-cover">
+                            <img alt="song-card">
+                            <h4 class="song-title">Sad Hindi Melodies</h4>
+                            <p>Soulful tunes for the heart.</p>
+                            <i id="1" class=" fa-solid fa-circle-play fa-3x cover-play-btn"></i>
+                        </div>
+                    </div>
+
+                    <div class="song-cards">
+                        <div class="song-cover">
+                            <img alt="song-card">
+                            <h4 class="song-title">Top Hindi Romantics</h4>
+                            <p>Fall in love with romantic songs</p>
+                            <i id="2" class=" fa-solid fa-circle-play fa-3x cover-play-btn"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="song-cards">
+                        <div class="song-cover">
+                            <img alt="song-card">
+                            <h4 class="song-title">New Music Hindi</h4>
+                            <p>Latest Hindi Songs | 2023</p>
+                            <i id="3" class=" fa-solid fa-circle-play fa-3x cover-play-btn"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="song-cards">
+                        <div class="song-cover">
+                            <img alt="song-card">
+                            <h4 class="song-title">Bollybood Mush</h4>
+                            <p>Songs be the love story</p>
+                            <i id="4" class=" fa-solid fa-circle-play fa-3x cover-play-btn"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="song-cards">
+                        <div class="song-cover">
+                            <img alt="song-card">
+                            <h4 class="song-title">Dil Ibadat</h4>
+                            <p>Hits of KK || Romantic Forever</p>
+                            <i id="5" class=" fa-solid fa-circle-play fa-3x cover-play-btn"></i>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Best of artist -->
+
+            <section class="user-likes">
+                <div class="user-likes-title">
+                    <h1>More of what you like</h1>
+                    <p>SHOW ALL</p>
                 </div>
 
-                <div class="nav-el">
-                    <img src="./Sidebar-Image/library.png" alt="library-icon" class="nav-icons">
-                    <h1>Your Library</h1>
+                <div class="cards">
+
+                    <div class="song-cards">
+                        <div class="song-cover">
+                            <img alt="song-card">
+                            <h4 class="song-title">Top Hindi Tracks of all time</h4>
+                            <p>Bollywood crooner's essential songs.</p>
+                            <i id="6" class=" fa-solid fa-circle-play fa-3x cover-play-btn"></i>
+                        </div>
+                    </div>
+
+                    <div class="song-cards">
+                        <div class="song-cover">
+                            <img alt="song-card">
+                            <h4 class="song-title">Sad Hindi Melodies</h4>
+                            <p>The essential tracks, all in one playlist.</p>
+                            <i id="7" class=" fa-solid fa-circle-play fa-3x cover-play-btn"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="song-cards">
+                        <div class="song-cover">
+                            <img alt="song-card">
+                            <h4 class="song-title">Top Hindi Romantics</h4>
+                            <p>The essential tracks, all in one playlist.</p>
+                            <i id="8" class=" fa-solid fa-circle-play fa-3x cover-play-btn"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="song-cards">
+                        <div class="song-cover">
+                            <img alt="song-card">
+                            <h4 class="song-title">New Music Hindi</h4>
+                            <p>The essential tracks, all in one playlist.</p>
+                            <i id="9" class=" fa-solid fa-circle-play fa-3x cover-play-btn"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="song-cards">
+                        <div class="song-cover">
+                            <img alt="song-card">
+                            <h4 class="song-title">Bollybood Mush</h4>
+                            <p>The essential tracks, all in one playlist.</p>
+                            <i id="10" class=" fa-solid fa-circle-play fa-3x cover-play-btn"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="song-cards">
+                        <div class="song-cover">
+                            <img alt="song-card">
+                            <h4 class="song-title">Dil Ibadat</h4>
+                            <p>The essential tracks, all in one playlist.</p>
+                            <i id="11" class=" fa-solid fa-circle-play fa-3x cover-play-btn"></i>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recently Played -->
+            <section class="user-likes">
+                <div class="user-likes-title">
+                    <h1>More of what you like</h1>
+                    <p>SHOW ALL</p>
                 </div>
 
+                <div class="cards">
+
+                    <div class="song-cards">
+                        <div class="song-cover">
+                            <img alt="song-card">
+                            <h4 class="song-title">Top Hindi Tracks of all time</h4>
+                            <p>Chirratan Bhatt</p>
+                            <i id="12" class=" fa-solid fa-circle-play fa-3x cover-play-btn"></i>
+                        </div>
+                    </div>
+
+                    <div class="song-cards">
+                        <div class="song-cover">
+                            <img alt="song-card">
+                            <h4 class="song-title">Sad Hindi Melodies</h4>
+                            <p>The essential tracks, all in one playlist.</p>
+                            <i id="13" class=" fa-solid fa-circle-play fa-3x cover-play-btn"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="song-cards">
+                        <div class="song-cover">
+                            <img alt="song-card">
+                            <h4 class="song-title">Top Hindi Romantics</h4>
+                            <p>The essential tracks, all in one playlist.</p>
+                            <i id="14" class=" fa-solid fa-circle-play fa-3x cover-play-btn"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="song-cards">
+                        <div class="song-cover">
+                            <img alt="song-card">
+                            <h4 class="song-title">New Music Hindi</h4>
+                            <p>The essential tracks, all in one playlist.</p>
+                            <i id="15" class=" fa-solid fa-circle-play fa-3x cover-play-btn"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="song-cards">
+                        <div class="song-cover">
+                            <img alt="song-card">
+                            <h4 class="song-title">Bollybood Mush</h4>
+                            <p>The essential tracks, all in one playlist.</p>
+                            <i id="16" class=" fa-solid fa-circle-play fa-3x cover-play-btn"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="song-cards">
+                        <div class="song-cover">
+                            <img alt="song-card">
+                            <h4 class="song-title">Dil Ibadat</h4>
+                            <p>The essential tracks, all in one playlist.</p>
+                            <i id="17" class=" fa-solid fa-circle-play fa-3x cover-play-btn"></i>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <section class="footer-section">
+            <div class="song-details">
+                <img src="./photos/play-song.jpg" alt="play-song" id="masterCover">
+                <div class="playing-song-info">
+                    <div>
+                        <h1 id="masterSongTitle">Raataan-Lambiyan</h1>
+                        <p id="masterSongInfo">Tanishk Bagchi, Jubin Nautial, Asees Kaur</p>
+                    </div>
+                    <i class="fa-regular fa-heart"></i>
+                </div>
             </div>
-
-            <div class="nav-el-lower">
-                <div class="nav-el">
-                    <img src="./Sidebar-Image/create-playlist.png" alt="create-playlist-icon" class="nav-icons">
-                    <h1>Create Playlist</h1>
+            <div class="song-status">
+                <div class="song-control">
+                    <i class="fa-solid fa-shuffle" id="shuffleMusic"></i>
+                    <p class="shuffle">Enable shuffle</p>
+                    <i class="fa-solid fa-backward-step" id="previous"></i>
+                    <p class="previous">Previous</p>
+                    <i class="fa-solid fa-circle-play fa-2x" id="masterPlay"></i>
+                    <p class="play">Play</p>
+                    <i class="fa-sharp fa-solid fa-forward-step" id="next"></i>
+                    <p class="next">Next</p>
+                    <i class="fa-solid fa-repeat" id="repeatMode"></i>
+                    <p class="enable-disable-repeat">Enable repeat</p>
                 </div>
-                <div class="nav-el">
-                    <img src="./Sidebar-Image/liked-songs.png" alt="liked-songs-icon" class="nav-icons">
-                    <h1>Liked Songs</h1>
+                <div class="progressbar-container">
+                    <span id="musicStart">0:00</span>
+                    <input type="range" name="range" value="0" min="0" max="100" class="track-seekbar" id="progressBar">
+                    <span id="musicEnd">0:00</span>
                 </div>
-                <div class="sidebar-line"></div>
             </div>
-        </nav>
-    </sidebar>
+            <div class="song-directory">
+                <i class="fa-solid fa-music"></i>
+                <p class="lyrics">Lyric</p>
+                <i class="fa-solid fa-bars"></i>
+                <p class="queue">Queue</p>
+                <i class="fa-solid fa-computer"></i>
+                <p class="connectivity">Connect to a device</p>
+                <i class="fa-solid fa-duotone fa-volume-high" id="volIcon"></i>
+                <p class="mute">Mute</p>
+                <input type="range" value="100" min="1" max="100" step="1" class="volume-seekbar">
+            </div>
+        </section>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/5ad84bde35.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
