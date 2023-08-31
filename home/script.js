@@ -37,13 +37,13 @@ let songs = [
 
 // Home Song Play
 
-playBtnHome.addEventListener("click", ()=>{
+playBtnHome.addEventListener("click", () => {
     if (audioElement.paused || audioElement.currentTime <= 0) {
         audioElement.play()
         playBtnHome.textContent = "Pause"
         masterPlay.classList.remove("fa-circle-play");
         masterPlay.classList.add("fa-circle-pause");
-    } else{
+    } else {
         audioElement.pause()
         playBtnHome.textContent = "Play"
         masterPlay.classList.remove("fa-circle-pause");
@@ -99,7 +99,7 @@ audioElement.addEventListener("ended", () => {
     progressBar.value = 0;
 });
 
-progressBarContainer.addEventListener("click", (event)=>{
+progressBarContainer.addEventListener("click", (event) => {
     let progressBarWidth = progressBarContainer.clientWidth;
     let clickX = event.offsetX;
     let duration = audioElement.duration;
@@ -108,6 +108,9 @@ progressBarContainer.addEventListener("click", (event)=>{
 
 audioElement.addEventListener("timeupdate", () => {
     let currentTime = audioElement.currentTime;
+    if (currentTime === 0) {
+        progressBarReset();
+    }
     let duration = audioElement.duration;
     let progressMinutes = Math.floor(currentTime / 60);
     let progressSeconds = Math.floor(currentTime % 60);
@@ -140,7 +143,7 @@ coverPlayBtns.forEach((btn, index) => {
         if (songIndex !== index) {
             songIndex = index;
             displaySongDetails(songIndex);
-        } 
+        }
         if (e.target.classList.contains("fa-circle-play")) {
             e.target.classList.remove("fa-circle-play");
             e.target.classList.add("fa-circle-pause");
@@ -205,7 +208,57 @@ document.getElementById('previous').addEventListener('click', () => {
     masterCover.src = songs[songIndex].coverPath;
     audioElement.currentTime = 0;
     audioElement.play();
+})
 
+// Repeat mode enable
+
+const musicRepeat = document.getElementById("repeatMode")
+
+function progressBarReset() {
+    progressBar.value = 0;
+}
+
+musicRepeat.addEventListener("click", () => {
+    if (musicRepeat.classList.contains("fa-repeat")) {
+        musicRepeat.classList.add("fa-arrow-rotate-right");
+        musicRepeat.classList.remove("fa-repeat");
+        audioElement.loop = true;
+        musicRepeat.style.color = "#26cc5a"
+    }
+    else {
+        musicRepeat.classList.add("fa-repeat");
+        musicRepeat.classList.remove("fa-arrow-rotate-right");
+        audioElement.loop = false;
+        musicRepeat.style.color = "#9f9b9b"
+    }
+});
+
+// Changing shuffle icon
+
+let shuffleMusic = document.getElementById("shuffleMusic")
+
+shuffleMusic.addEventListener("click", () => {
+    if (shuffleMusic.classList.contains("fa-shuffle")) {
+        shuffleMusic.classList.add("fa-icons");
+        shuffleMusic.classList.remove("fa-shuffle");
+        shuffleMusic.style.color = "#26cc5a"
+    }
+    else {
+        shuffleMusic.classList.remove("fa-icons");
+        shuffleMusic.classList.add("fa-shuffle");
+        shuffleMusic.style.color = "#9f9b9b"
+    }
+})
+// enable shuffle song
+audioElement.addEventListener("ended", () => {
+    if (shuffleMusic.classList.contains("fa-icons")) {
+        songIndex = Math.floor(Math.random() * songs.length);
+    }
+    audioElement.src = songs[songIndex].songPath;
+    masterSongTitle.innerText = songs[songIndex].songTitle;
+    masterSongInfo.innerText = songs[songIndex].songInfo;
+    masterCover.src = songs[songIndex].coverPath;
+    audioElement.play();
 })
 
 // Dropdown
@@ -234,7 +287,7 @@ dropdown.onclick = () => {
 // Log Out
 let logOut = document.querySelector("#log-out");
 logOut.onclick = () => {
-    window.open("../login/login.html", "_self");
+    window.open("../login/index.html", "_self");
 }
 
 // follow button
@@ -321,49 +374,3 @@ sideBarSearch.onclick = () => {
     }
 }
 
-// repeat mode enable
-
-const musicRepeat = document.getElementById("repeatMode")
-
-musicRepeat.addEventListener("click", () => {
-    if (musicRepeat.classList.contains("fa-repeat")) {
-        musicRepeat.classList.add("fa-arrow-rotate-right");
-        musicRepeat.classList.remove("fa-repeat");
-        audioElement.loop = true;
-        musicRepeat.style.color = "#26cc5a"
-    }
-    else {
-        musicRepeat.classList.add("fa-repeat");
-        musicRepeat.classList.remove("fa-arrow-rotate-right");
-        audioElement.loop = false;
-        musicRepeat.style.color = "#9f9b9b"
-    }
-});
-
-// Changing shuffle icon
-
-let shuffleMusic = document.getElementById("shuffleMusic")
-
-shuffleMusic.addEventListener("click", () => {
-    if (shuffleMusic.classList.contains("fa-shuffle")) {
-        shuffleMusic.classList.add("fa-icons");
-        shuffleMusic.classList.remove("fa-shuffle");
-        shuffleMusic.style.color = "#26cc5a"
-    }
-    else {
-        shuffleMusic.classList.remove("fa-icons");
-        shuffleMusic.classList.add("fa-shuffle");
-        shuffleMusic.style.color = "#9f9b9b"
-    }
-})
-// enable shuffle song
-audioElement.addEventListener("ended", () => {
-    if (shuffleMusic.classList.contains("fa-icons")) {
-        songIndex = Math.floor(Math.random() * songs.length);
-    }
-    audioElement.src = songs[songIndex].songPath;
-    masterSongTitle.innerText = songs[songIndex].songTitle;
-    masterSongInfo.innerText = songs[songIndex].songInfo;
-    masterCover.src = songs[songIndex].coverPath;
-    audioElement.play();
-})
