@@ -1,0 +1,346 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 14vh;
+}
+
+#spotify-logo{
+    width: 10%;
+    /* filter: grayscale(100%); */
+}
+
+#toggleMode{
+    font-size: 25px;
+    cursor: pointer;
+    position: absolute;
+    top: 4%;
+    left: 90%;
+}
+
+#toggle-paragraph{
+    display: none;
+    font-size: 13px;
+    position: absolute;
+    left: 87%;
+    top: 12px;
+}
+
+#nav-line{
+    width: 100%;
+    border: 0.5px solid #dfdcdc;
+}
+
+#login-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+#login-paragraph{
+    position: relative;
+}
+
+#login-section > button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn{
+    width: 30rem;
+    padding: 8px 0px;
+    margin-top: 15px;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 50px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+}
+
+#fb-login-btn{
+    color: #f8f8f8;
+    background-color: #1877f2;
+    border-color: #00000033;
+}
+
+#apple-login-btn{
+    color: #f8f8f8;
+    background-color: #000000e6;
+    border: 1px solid #878787;
+}
+
+#google-login-btn{
+    padding: 5px 0px;
+    color: #878787;
+    background-color: transparent;
+    border: 1px solid #878787;
+}
+
+#phone-login-btn{
+    padding: 14px 0px;
+    background-color: transparent;
+    color: #878787;
+    border: 1px solid #878787;
+}
+
+#google-logo{
+    height: 35px;
+}
+
+#hr{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 20px;
+}
+
+#or{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.line{
+    border: 1px solid #d9dadc;
+    width: 200px;
+}
+
+/* Login Form */
+#login-form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+#user-id, #user-password{
+    display: flex;
+    flex-direction: column;
+}
+
+#user-login, #password-elements{
+    background-color: transparent;
+    color: #000000;
+    border: 1px solid #878787;
+    outline: none;      /* remove this to match exactly like spotify app input*/
+    border-radius: 8px;
+    width: 30rem;
+    padding: 14px 15px;
+    margin: 10px 0px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+#password-elements{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#login-password{
+    background-color: transparent;
+    color: #000000;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    font-weight: 500;
+    width: 80%;
+}
+
+#eye-icon{
+    color: #ff0000;
+}
+
+#check-and-login{
+    display: flex;
+}
+
+label{
+    font-weight: bold;
+}
+
+a{
+    color: #000000;
+    font-weight: 600;
+    margin: 12px 0px;
+}
+
+#check-and-login{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#check-and-login p{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#check-box{
+    width: 16px;
+    height: 16px;
+    accent-color: #169b45;
+}
+
+input[type="checkbox"]:focus {
+  outline:2.5px solid black;
+  outline-offset: 4px;
+}
+
+#login-btn{
+    background-color: #1ed760;
+    width: 7rem;
+    padding: 13px 10px;
+    margin-left: 14rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: ease-in-out 0.2s;
+    cursor: pointer;
+}
+
+.bottom-line{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border: 1px solid #d9dadc;
+    width: 470px;
+}
+
+#sign-up-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+#spotify-login-btn{
+    padding: 12px 0px;
+    margin-top: 25px;
+    margin-left: 65px;
+    background-color: transparent;
+    color: #878787;
+    border: 1px solid #878787;
+    text-transform: uppercase;
+}
+
+.sign-up-captcha{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recaptcha-section{
+    position: relative;
+    right: -28rem;
+    top: 13px;
+    bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.outside-recaptcha{
+    width: 80px;
+    height: 60px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: 0.5s ease-in-out;
+}
+
+.outside-recaptcha img{
+    width: 40px;
+}
+
+.outside-recaptcha p{
+    font-size: 9px;
+    color: #757676;
+}
+
+.inside-recaptcha{
+    background-color: #1877f2;
+    color: #ffffff;
+    height: 60px;
+    width: 200px;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 22px;
+    position: absolute;
+    transition: 0.5s ease-in-out;
+}
+
+.inside-recaptcha {
+    opacity: 0;
+}
+
+.recaptcha-section:hover .inside-recaptcha {
+    opacity: 1;
+    transform: translate(-30%);
+}
+
+.recaptcha-section:hover .outside-recaptcha{
+    transform: translate(-250%);
+}
+
+
+.inside-span{
+    font-size: 14px;
+}
+
+.re-cap-span{
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+.re{
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.inside-recaptcha p{
+    font-size: 11px;
+    padding-top: 4px;
+}
+
+/* Hover Efect */
+
+#apple-login-btn:hover, #google-login-btn:hover, #phone-login-btn:hover, #spotify-login-btn:hover{
+    border: 1px solid #000000;
+}
+
+#user-login:hover, #password-elements:hover{
+    border: 1px solid #000000;
+}
+
+.forgot-paragraph:hover{
+    color: #169b45;
+}
+
+#login-btn:hover{
+    transform: scale(1.05);
+}
+
+#login-section{
+    overflow: hidden;
+}
+
+
