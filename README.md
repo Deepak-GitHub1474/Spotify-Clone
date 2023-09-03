@@ -1,4 +1,4 @@
-## ---------------- Spotify Clone ----------------##
+## ---------- Spotify Clone ----------##
 This is a web-based Spotify Clone project that replicates some of the features and 
 functionality of the popular music streaming platform Spotify.
 
