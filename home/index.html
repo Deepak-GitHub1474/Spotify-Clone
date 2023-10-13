@@ -23,17 +23,17 @@
 
                     <div class="nav-el">
                         <img src="./Sidebar-Image/home.png" alt="home-icon" class="nav-icons">
-                        <h1>Home</h1>
+                        <h1 class="sidebar-navigator">Home</h1>
                     </div>
 
                     <div class="nav-el">
                         <img src="./Sidebar-Image/search.png" alt="search-icon" class="nav-icons" id="sidebar-search">
-                        <h1>Search</h1>
+                        <h1 class="sidebar-navigator">Search</h1>
                     </div>
 
                     <div class="nav-el">
                         <img src="./Sidebar-Image/library.png" alt="library-icon" class="nav-icons">
-                        <h1>Your Library</h1>
+                        <h1 class="sidebar-navigator">Your Library</h1>
                     </div>
 
                 </div>
@@ -41,47 +41,47 @@
                 <div class="nav-el-lower">
                     <div class="nav-el">
                         <img src="./Sidebar-Image/create-playlist.png" alt="create-playlist-icon" class="nav-icons">
-                        <h1>Create Playlist</h1>
+                        <h1 class="sidebar-navigator">Create Playlist</h1>
                     </div>
                     <div class="nav-el">
                         <img src="./Sidebar-Image/liked-songs.png" alt="liked-songs-icon" class="nav-icons">
-                        <h1>Liked Songs</h1>
+                        <h1 class="sidebar-navigator">Liked Songs</h1>
                     </div>
                     <div class="sidebar-line"></div>
                 </div>
             </nav>
         </sidebar>
 
-        <!-- Main Section -->
-        <main class="main">
-            <!-- Header section -->
-            <section class="header-section">
-                <div class="back-forward-btn">
-                    <i class="fa-solid fa-circle-chevron-left back-btn fa-2x"></i>
-                    <i class="fa-solid fa-circle-chevron-right forward-btn fa-2x"></i>
-                </div>
-                <div class="header-search-div">
-                    <i class="fa-solid fa-magnifying-glass fa-2x header-search-icon"></i>
-                    <input type="text" placeholder="what do you want to listen ?">
-                </div>
-                <div class="upgrade">
-                    <button class="upgrade-btn">Explore Premium</button>
-                </div>
+        <!-- Header section -->
+        <section class="header-section">
+            <div class="back-forward-btn">
+                <i class="fa-solid fa-circle-chevron-left back-btn fa-2x"></i>
+                <i class="fa-solid fa-circle-chevron-right forward-btn fa-2x"></i>
+            </div>
+            <!-- <div class="header-search-div">
+                <i class="fa-solid fa-magnifying-glass fa-2x header-search-icon"></i>
+                <input type="text" placeholder="what do you want to listen ?">
+            </div> -->
+            <div class="upgrade-dropdown-container">
+                <button class="upgrade-btn">Explore Premium</button>
                 <div class="dropdown">
                     <img src="./photos/dropdown-profile-img.png" alt="dropdown-profile-img">
                     <p class="profile-name">Deepak</p>
                     <i class="fa-solid fa-caret-down"></i>
+                    <ul class="dropdown-inner">
+                        <li>Account</li>
+                        <li>Profile</li>
+                        <li>Private Session</li>
+                        <li>Settings</li>
+                        <div class="logout-line"></div>
+                        <li id="log-out">Log Out</li>
+                    </ul>
                 </div>
-                <ul class="dropdown-inner">
-                    <li>Account</li>
-                    <li>Profile</li>
-                    <li>Private Session</li>
-                    <li>Settings</li>
-                    <div class="logout-line"></div>
-                    <li id="log-out">Log Out</li>
-                </ul>
-                <div class="user-name">Deepak</div>
-            </section>
+                
+            </div>
+        </section>
+
+        <main class="main">
             <!--Main Home Section -->
             <section class="home-page">
                 <div class="playlist-sponsored">
@@ -318,18 +318,18 @@
 
     <!-- Footer Section -->
     <footer>
-        <section class="footer-section">
-            <div class="song-details">
+        <div class="footer-section">
+            <section class="song-details">
                 <img src="./photos/play-song.jpg" alt="play-song" id="masterCover">
                 <div class="playing-song-info">
-                    <div>
+                    <div class="song-info">
                         <h1 id="masterSongTitle">Raataan-Lambiyan</h1>
                         <p id="masterSongInfo">Tanishk Bagchi, Jubin Nautial, Asees Kaur</p>
                     </div>
                     <i class="fa-regular fa-heart"></i>
                 </div>
-            </div>
-            <div class="song-status">
+            </section>
+            <section class="song-status">
                 <div class="song-control">
                     <i class="fa-solid fa-shuffle" id="shuffleMusic"></i>
                     <p class="shuffle">Enable shuffle</p>
@@ -347,8 +347,8 @@
                     <input type="range" name="range" value="0" min="0" max="100" class="track-seekbar" id="progressBar">
                     <span id="musicEnd">0:00</span>
                 </div>
-            </div>
-            <div class="song-directory">
+            </section>
+            <section class="song-directory">
                 <i class="fa-solid fa-music"></i>
                 <p class="lyrics">Lyric</p>
                 <i class="fa-solid fa-bars"></i>
@@ -358,8 +358,8 @@
                 <i class="fa-solid fa-duotone fa-volume-high" id="volIcon"></i>
                 <p class="mute">Mute</p>
                 <input type="range" value="100" min="1" max="100" step="1" class="volume-seekbar">
-            </div>
-        </section>
+            </section>
+        </div>
     </footer>
 
     <script src="https://kit.fontawesome.com/5ad84bde35.js" crossorigin="anonymous"></script>
